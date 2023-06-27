@@ -12,12 +12,12 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - EnemyProjectiles
+  - Ally
+  - AllyProjectiles
+  - DetectionZone
+  - PostProcessing
   - 
   - 
   - 
