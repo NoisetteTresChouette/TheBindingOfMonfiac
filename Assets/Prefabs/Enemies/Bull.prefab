@@ -66,7 +66,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 4
-  _audioSource: {fileID: 5718957239027502060}
   _hitSound: {fileID: 8300000, guid: b0721bd38c9bc2c408bec135e4c20424, type: 3}
 --- !u!114 &980477885723807500
 MonoBehaviour:
@@ -80,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba5bf1a745d6b1f44893200dd20266d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 7
+  _speed: 10
 --- !u!50 &5529846384885874741
 Rigidbody2D:
   serializedVersion: 4
@@ -327,6 +326,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 483388419, guid: 0680883b86bc58442bf1959a0cee43ad, type: 3}
     - target: {fileID: 5119054506042465274, guid: f8629f5d556110045add94485016ab26, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5119054506042465274, guid: f8629f5d556110045add94485016ab26, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
@@ -385,14 +388,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4418492324449614852, guid: f8629f5d556110045add94485016ab26, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7024514087357239913}
+      addedObject: {fileID: 8302293557384852928}
   m_SourcePrefab: {fileID: 100100000, guid: f8629f5d556110045add94485016ab26, type: 3}
 --- !u!1 &2791318451039296659 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4418492324449614852, guid: f8629f5d556110045add94485016ab26, type: 3}
   m_PrefabInstance: {fileID: 2012372414208090263}
   m_PrefabAsset: {fileID: 0}
---- !u!60 &7024514087357239913
+--- !u!60 &8302293557384852928
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -427,7 +430,7 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.42}
     oldSize: {x: 3.4285715, y: 3.4285715}
     newSize: {x: 3.4285715, y: 3.4285715}
     adaptiveTilingThreshold: 0.5
@@ -436,10 +439,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.71428573, y: -1.4285715}
-      - {x: -0.71428573, y: 0.8571429}
-      - {x: 0.71428573, y: 0.8571429}
-      - {x: 0.71428573, y: -1.4285715}
+    - - {x: -0.71428573, y: -1.1542858}
+      - {x: -0.71428573, y: 1.1314286}
+      - {x: 0.71428573, y: 1.1314286}
+      - {x: 0.71428573, y: -1.1542858}
   m_UseDelaunayMesh: 0
 --- !u!4 &8351661681433963313 stripped
 Transform:

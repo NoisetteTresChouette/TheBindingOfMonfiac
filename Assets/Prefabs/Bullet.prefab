@@ -51,6 +51,7 @@ MonoBehaviour:
   _speed: 20
   m_explosionEffect: {fileID: 681094667551923929, guid: 81c575c2bb853c7409337081fe5660a1, type: 3}
   m_explosionSound: {fileID: 8300000, guid: 16decdfdd05d36647947dde090c88de1, type: 3}
+  m_mixerGroup: {fileID: -1051987289344642206, guid: 62bd3ce15594db74c928cb6279d95916, type: 2}
 --- !u!212 &356310909471441745
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -91,7 +92,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0

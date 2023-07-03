@@ -41,6 +41,7 @@ public class LifeUI : MonoBehaviour
         {
             if (!_hearts[i].GetComponent<PixelHeart>().IsDamaged)
             {
+                Debug.Log("oui");
                 _hearts[i].GetComponent<PixelHeart>().DamageEvent();
                 break;
             }

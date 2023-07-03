@@ -7,7 +7,8 @@ public class Enemy : MonoBehaviour
 {
     public void Die()
     {
-        GameManager.m_instance.m_enemyNumber--;
+        LevelManager.m_instance.m_enemyNumber--;
+        Debug.Log(name + " died");
     }
 
 }

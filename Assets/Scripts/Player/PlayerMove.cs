@@ -7,23 +7,27 @@ using UnityEngine.InputSystem;
 public class PlayerMove : MonoBehaviour
 {
 
-    [SerializeField]
-    [Tooltip("direction de déplacement du personnage")]
+    
     private Vector3 _direction;
-    [SerializeField]
-    [Tooltip("Vitesse de déplacement du personnage")]
-    private float _speed = 8f;
-    [SerializeField]
-    [Tooltip("_rotation du personnage")]
     private Quaternion _rotation;
+
+    [SerializeField]
+    [Tooltip("Vitesse de déplacement du personnage pendant la course")]
+    private float _runnningSpeed = 12f;
+    [SerializeField]
+    [Tooltip("Vitesse de déplacement du personnage pendant le tir")]
+    private float _shootingSpeed = 8f;
+    private float _speed;
 
     private Rigidbody2D _rigidbody;
     private Animator _animator;
 
+    #region UnityLifeCycle
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponentInChildren<Animator>();
+        _speed = _runnningSpeed;
     }
 
     private void Update()
@@ -39,13 +43,26 @@ public class PlayerMove : MonoBehaviour
         _rigidbody.SetRotation(_rotation);
 
     }
+    #endregion
 
-    public void OnMove(InputAction.CallbackContext context)
+    public void SwitchSpeed()
+    {
+        if (_speed == _shootingSpeed)
+        {
+            _speed = _runnningSpeed;
+        }
+        else
+        {
+            _speed = _shootingSpeed;
+        }
+    }
+
+    public void MoveAction(InputAction.CallbackContext context)
     {
         _direction = context.action.ReadValue<Vector2>();
     }
 
-    public void OnGamepadRotate(InputAction.CallbackContext context)
+    public void GamepadRotateAction(InputAction.CallbackContext context)
     {
         Vector3 orientation = (Vector3)context.action.ReadValue<Vector2>();
         if (orientation != Vector3.zero)
@@ -54,7 +71,7 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    public void OnMouseRotate(InputAction.CallbackContext context)
+    public void MouseRotateAction(InputAction.CallbackContext context)
     {
         Vector3 mousePosition = (Vector3) Mouse.current.position.ReadValue();
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);

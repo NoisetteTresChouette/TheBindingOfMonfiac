@@ -33,12 +33,12 @@ public class LifeSystem : MonoBehaviour
     {
         if (gameObject.tag == "Enemy")
         {
-            GameManager.m_instance.m_enemyNumber--;
+            gameObject.GetComponent<Enemy>().Die();
             Destroy(gameObject);
         }
         else
         {
-            GameManager.m_instance.m_isPlayerAlive = false;
+            LevelManager.m_instance.m_isPlayerAlive = false;
             gameObject.SetActive(false);
         }
     }

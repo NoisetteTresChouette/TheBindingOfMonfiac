@@ -9,8 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 39814f9682b55ef4580b7ce7ac4d503e
   - enabled: 1
-    path: Assets/Scenes/PlayScene.unity
+    path: Assets/Scenes/Level0.unity
     guid: 5aa1b148a5684304ea1f6c9e73360c63
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 7889f6d0e17c3854a87f90dab00d252d
   - enabled: 1
     path: Assets/Scenes/GameOverScreen.unity
     guid: c56df81c388fa774cac7dcaac27755c7
@@ -20,8 +23,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PauseMenu.unity
     guid: 5c3f9574c31e80047a89ca1b6debe256
-  - enabled: 1
-    path: Assets/Scenes/VolumeMenu.unity
-    guid: 9c64381ef74af544784fcb1abcc059d4
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: eec41a3d168b51746a69adc52758f30c, type: 2}

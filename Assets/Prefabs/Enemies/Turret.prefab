@@ -63,7 +63,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 1
-  _audioSource: {fileID: 1836874496736147172}
   _hitSound: {fileID: 8300000, guid: b0721bd38c9bc2c408bec135e4c20424, type: 3}
 --- !u!114 &874207135320309946
 MonoBehaviour:
@@ -253,6 +252,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1561757365, guid: cb1fcaa92b6856048ac322c026e11e4f, type: 3}
     - target: {fileID: 5119054506042465274, guid: f8629f5d556110045add94485016ab26, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5119054506042465274, guid: f8629f5d556110045add94485016ab26, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5119054506042465274, guid: f8629f5d556110045add94485016ab26, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
@@ -310,7 +317,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4418492324449614852, guid: f8629f5d556110045add94485016ab26, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7729668014769705649}
+      addedObject: {fileID: 6965361334709371590}
   m_SourcePrefab: {fileID: 100100000, guid: f8629f5d556110045add94485016ab26, type: 3}
 --- !u!4 &1670018613213575405 stripped
 Transform:
@@ -322,7 +329,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4418492324449614852, guid: f8629f5d556110045add94485016ab26, type: 3}
   m_PrefabInstance: {fileID: 9162409700658344779}
   m_PrefabAsset: {fileID: 0}
---- !u!60 &7729668014769705649
+--- !u!60 &6965361334709371590
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -357,7 +364,7 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.355}
     oldSize: {x: 2.4, y: 2.4}
     newSize: {x: 2.4, y: 2.4}
     adaptiveTilingThreshold: 0.5
@@ -366,12 +373,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.7, y: -1.1}
-      - {x: -0.8, y: -0.7}
-      - {x: -0.5, y: -0.3}
-      - {x: -0.5, y: 0.4}
-      - {x: 0.5, y: 0.4}
-      - {x: 0.5, y: -0.3}
-      - {x: 0.8, y: -0.7}
-      - {x: 0.5, y: -1.1}
+    - - {x: -0.5, y: -0.752}
+      - {x: -0.5, y: 0.7480001}
+      - {x: 0.5, y: 0.7480001}
+      - {x: 0.5, y: -0.752}
   m_UseDelaunayMesh: 0

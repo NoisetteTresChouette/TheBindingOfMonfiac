@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class PlayerShoot : Shooter
 {
@@ -10,6 +11,9 @@ public class PlayerShoot : Shooter
     private bool _startShooting;
 
     private bool _stopShooting;
+
+    public UnityEvent OnStartShooting;
+    public UnityEvent OnStopShooting;
 
     private void Update()
     {
@@ -40,17 +44,19 @@ public class PlayerShoot : Shooter
         return _stopShooting;
     }
 
-    public void OnShoot(InputAction.CallbackContext context)
+    public void ShootAction(InputAction.CallbackContext context)
     {
-        if (context.action.WasPressedThisFrame())
+        if (context.started)
         {
             _isShooting = true;
             _startShooting = true;
+            OnStartShooting.Invoke();
         }
         if (context.action.WasReleasedThisFrame())
         {
             _isShooting = false;
             _stopShooting = true;
+            OnStopShooting.Invoke();
         }
     }
 

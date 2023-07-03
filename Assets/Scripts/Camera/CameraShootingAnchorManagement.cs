@@ -24,7 +24,7 @@ public class CameraShootingAnchor : MonoBehaviour
         _initOffset = transform.localPosition;
     }
 
-    private void LateUpdate()
+    private void Update()
     {
         if (GetComponentInParent<PlayerShoot>().IsStartingShooting() || GetComponentInParent<PlayerShoot>().IsStopingShooting())
         {

@@ -14,12 +14,14 @@ public class CameraAnchor : MonoBehaviour
     private float _switchTime;
 
     [SerializeField]
+    [Tooltip("while running, the time this anchor takes to get from its current position, to the runnning anchor")]
     private float _smoothTimeRun;
 
     [SerializeField]
+    [Tooltip("while shooting, the time this anchor takes to get from its current position, to the shooting anchor")]
     private float _smoothTimeShoot;
 
-    private float _currentTime;
+    private float _currentSwitchingTime;
 
     private Vector3 _velocity = Vector3.zero;
 
@@ -27,14 +29,14 @@ public class CameraAnchor : MonoBehaviour
     {
         if (GetComponentInParent<PlayerShoot>().IsStartingShooting() || GetComponentInParent<PlayerShoot>().IsStopingShooting())
         {
-            _currentTime = _switchTime;
+            _currentSwitchingTime = _switchTime;
         }
 
         if (GetComponentInParent<PlayerShoot>().IsShooting())
         {
-            if (_currentTime > 0f)
+            if (_currentSwitchingTime > 0f)
             {
-                transform.position = Vector3.SmoothDamp(transform.position, m_shootingAnchor.position, ref _velocity, _currentTime);
+                transform.position = Vector3.SmoothDamp(transform.position, m_shootingAnchor.position, ref _velocity, _currentSwitchingTime);
             }
             else
             {
@@ -43,13 +45,16 @@ public class CameraAnchor : MonoBehaviour
         }
         else
         {
-            if (_currentTime > 0f)
+            if (_currentSwitchingTime > 0f)
             {
-                transform.position = Vector3.SmoothDamp(transform.position, m_runingAnchor.position, ref _velocity, _currentTime);
+                transform.position = Vector3.SmoothDamp(transform.position, m_runingAnchor.position, ref _velocity, _currentSwitchingTime);
             }
-            else transform.position = Vector3.SmoothDamp(transform.position, m_runingAnchor.position, ref _velocity, _smoothTimeRun);
+            else
+            {
+                transform.position = Vector3.SmoothDamp(transform.position, m_runingAnchor.position, ref _velocity, _smoothTimeRun);
+            }
         }
-        _currentTime = Mathf.Max(0f, _currentTime - Time.deltaTime);
+        _currentSwitchingTime = Mathf.Max(-1f, _currentSwitchingTime - Time.deltaTime);
     }
 
 }

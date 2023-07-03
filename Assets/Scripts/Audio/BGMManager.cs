@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class BGMManager : MonoBehaviour
 {
 
+    private static BGMManager _instance;
+
     [SerializeField]
     [Tooltip("The playlist that will play during the game")]
     private List<AudioClip> _playList= new();
@@ -18,7 +20,11 @@ public class BGMManager : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else _instance = this;
         _audioSource = GetComponent<AudioSource>();
     }
 

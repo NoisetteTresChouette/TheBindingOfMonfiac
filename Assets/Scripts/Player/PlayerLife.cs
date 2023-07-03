@@ -23,6 +23,7 @@ public class PlayerLife : LifeSystem
         if (collision.gameObject.tag == "Enemy")
         {
             GetHit(1);
+            OnHit.Invoke();
         }
     }
 
